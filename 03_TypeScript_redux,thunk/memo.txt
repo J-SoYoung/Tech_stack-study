@@ -1,0 +1,3 @@
+벨로퍼트 타입스크립트 블로그 
+-> 미들웨어에서 Error...
+https://react.vlpt.us/using-typescript/06-ts-redux-middleware.html
