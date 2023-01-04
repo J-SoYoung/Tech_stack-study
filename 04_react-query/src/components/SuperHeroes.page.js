@@ -9,7 +9,7 @@ export const SuperHeroesPage = () => {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    axios.get('http://localhost:3005/superheroes').then(res => {
+    axios.get('http://localhost:3003/superheroes').then(res => {
       setData(res.data)
       setIsLoading(false)
     }).catch(error=>{
