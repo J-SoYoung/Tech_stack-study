@@ -1,0 +1,68 @@
+{
+  "superheroes": [
+    {
+      "id": 1,
+      "name": "Batman",
+      "alterEgo": "Bruce Wayne"
+    },
+    {
+      "id": 2,
+      "name": "Superman",
+      "alterEgo": "Clark Kent"
+    },
+    {
+      "id": 3,
+      "name": "Wonder Woman",
+      "alterEgo": "Princess Diana"
+    },
+    {
+      "name": "아 작성되나요",
+      "alterEgo": "나는 영웅이다 ",
+      "id": 4
+    },
+    {
+      "name": "소영",
+      "alterEgo": "소영333",
+      "id": 5
+    },
+    {
+      "name": "소영이",
+      "alterEgo": "짱짱",
+      "id": 6
+    },
+    {
+      "name": "소영이ㅋㅋ",
+      "alterEgo": "짱짱ㅋㅋ",
+      "id": 7
+    },
+    {
+      "name": "ㅋㅋㅋ",
+      "alterEgo": "ㅋㅋㅋ",
+      "id": 8
+    },
+    {
+      "name": "ㅋㅋㅋ",
+      "alterEgo": "ㅋㅋㅋ",
+      "id": 9
+    },
+    {
+      "name": "ddd",
+      "alterEgo": "zzz",
+      "id": 10
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "thdud"
+    },
+    {
+      "id": 2,
+      "name": "tjsdud"
+    },
+    {
+      "id": 3,
+      "name": "dudwn"
+    }
+  ]
+}

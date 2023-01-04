@@ -25,7 +25,10 @@ export const useSuperHeroData = (heroId) =>{
 //   return useQuery (['super-hero', heroId], fetchSuperHero)
 // }
 
-// queryKey
+
+
+
+// queryKey ----------------------------------------------------------------
 // queryKey는 React Query에서 중요한 개념이다. 
 // 내부적으로 데이터를 캐시하고 쿼리에 대한 종속성이 변경될 때 
 // queryKey를 통해 자동으로 데이터를 가져올 수 있게 한다. 
