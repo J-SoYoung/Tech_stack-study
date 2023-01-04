@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css'
+import { ReactQueryDevtools } from 'react-query/devtools'
 import { QueryClientProvider, QueryClient } from 'react-query';
 import { HomePage } from './components/Home.page'
 import { RQSuperHeroesPage } from './components/RQSuperHeroes.page'
+import { RQSuperHeroPage } from './components/RQSuperHeroes.page'
 import { SuperHeroesPage } from './components/SuperHeroes.page'
 
 const queryClient = new QueryClient()
@@ -29,9 +31,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/super-heroes" element={<SuperHeroesPage />} />
           <Route path="/rq-super-heroes" element={<RQSuperHeroesPage />} />
+          <Route path="/rq-super-heroes/:heroId" element={<RQSuperHeroPage />} />
         </Routes>
       </div>
     </BrowserRouter>
+    <ReactQueryDevtools />
   </QueryClientProvider>
   )
 }
