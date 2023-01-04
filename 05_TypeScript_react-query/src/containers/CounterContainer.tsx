@@ -28,11 +28,13 @@ export const CounterContainer = () =>{
   
   
 return (
+  <div style={{padding:'30px'}}>
     <Counter
       count={count}
       onIncrease={onIncrease}
       onDecrease={onDecrease}
       onIncreaseBy={onIncreaseBy}
     />
+  </div>
   );
 };
