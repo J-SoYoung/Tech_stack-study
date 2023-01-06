@@ -1,24 +1,27 @@
 // reactQuery로 데이터 가져오기
-import { useQuery } from 'react-query'
-import axios from 'axios'
+import { useQuery } from "react-query";
+import axios from "axios";
 
 const fetchSuperHeros = () => {
-  return axios.get('http://localhost:3003/superheroes')
-}
+  return axios.get("http://localhost:3003/superheroes");
+};
 const fetchFriends = () => {
-  return axios.get('http://localhost:3003/friends')
-}
+  return axios.get("http://localhost:3003/friends");
+};
 
-export const ParallelQueriesPage = ()=>{
-  const { data: superHeroes } = useQuery('super-heroes', fetchSuperHeros)
-  const { data: friends } = useQuery('friends', fetchFriends)
-  
+export const ParallelQueriesPage = () => {
+  const { data: superHeroes } = useQuery("super-heroes", fetchSuperHeros);
+  const { data: friends } = useQuery("friends", fetchFriends);
+
   return (
-    <div>ParallelQueriesPage</div>
-  )
-}
+    <>
+      <div>ParallelQueriesPage</div>
 
-
+      <h2>hero : {superHeroes.data[0].name}</h2>
+      <h2>friends : {friends.data[0].name}</h2>
+    </>
+  );
+};
 
 // import연결 => axios로 데이터 가져오기 => useQuery로 필요한 데이터 요청
 //   useQuery('super-heroes', fetchSuperHeros)
@@ -28,4 +31,4 @@ export const ParallelQueriesPage = ()=>{
 // 데이터 패칭이 여러개 실행되어야 한다면 useQuery를 병렬로 선언하면 된다.
 //  const { data: superHeroes } = useQuery('super-heroes', fetchSuperHeros)
 //  const { data: friends } = useQuery('friends', fetchFriends)
-// data에 별칭 처리를 해주면 된다 
+// data에 별칭 처리를 해주면 된다

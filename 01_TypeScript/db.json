@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "email": "server@aaa.aaa"
+    },
+    {
+      "id": 2,
+      "title": "json-thdud",
+      "email": "thdud@aaa.aaa"
+    },
+    {
+      "id": 3,
+      "title": "json-alswo",
+      "email": "alswo@aaa.aaa"
+    }
+  ]
+}
