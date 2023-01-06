@@ -3,11 +3,11 @@ import { useQuery, useMutation, useQueryClient } from "react-query";
 import axios from "axios";
 
 const fetchSuperHeros = () => {
-  return axios.get("http://localhost:3003/superheroes");
+  return axios.get("http://localhost:3005/superheroes");
 };
 
 const addSuperHero = (hero) => {
-  return axios.post("http://localhost:3003/superheroes", hero);
+  return axios.post("http://localhost:3005/superheroes", hero);
 };
 
 // READ HOOKS
@@ -18,7 +18,7 @@ export const useSuperHeroData = (onSuccess, onError) => {
     {
       onSuccess,
       onError,
-      // select: (data)=>{
+      // select:   (data)=>{
       //   const superHeroNames = data.data.map((hero)=> hero.name)
       //   return superHeroNames
       // }
@@ -26,28 +26,57 @@ export const useSuperHeroData = (onSuccess, onError) => {
   );
 };
 
-// ADD HOOKS
+// ADD HOOKS ( 추가하기 - 기본 )
 export const UesAddSuperHeroData = () => {
-  // 데이터 추가 이후 다시 getData 하기 위해 queryClient를 무효화시켜야한다
   const queryClient = useQueryClient();
-
-  // useMutation ( API호출, 콜백함수 )
-  // useMutation ( addSuperHero, 성공시 콜백함수-매개변수를 가져와야함 : 화살표함수  )
   return useMutation(addSuperHero, {
-    onSuccess: (data) => {
-      // queryKey값 무효화해서 새로 데이터를 받아오는 방법
-      // queryClient.invalidateQueries("super-heroes");
-      // 추가 네트워크 요청 방지 ( 서버로 보내는 데이터가 있기 때문에 서버 응답을 또 받을 필요없다)
-      // mutation에서 반환된 데이터를 사용한다
-      console.log(data);
-      queryClient.setQueryData("super-heros", (oldQueryData) => {
-        // query의 기본인자로는 (old)이전 data를 가지고 있다
-        console.log(oldQueryData);
-        return {
-          ...oldQueryData,
-          data: [...oldQueryData.data, data.data],
-        };
-      });
+    onSuccess: () => {
+      // 쿼리 무효화
+      // queryClient.invalidateQueries();
+      // queryKey가 'super-heroes'로 시작하는 모든 쿼리 무효화
+      queryClient.invalidateQueries("super-heroes");
     },
   });
 };
+
+// 데이터 추가 ----------------------------------------------------------------
+// useMutation ( API호출 )
+// export const UesAddSuperHeroData = () => {
+//   return useMutation(addSuperHero);
+// };
+
+// 데이터 추가 후 새로고침 ----------------------------------------------------
+// 데이터 추가 이후 다시 getData 하기 위해 queryClient를 무효화시켜야한다
+
+// 1. queryClient import , 객체 만들기
+// const queryClient = useQueryClient();
+
+// 2. 성공시에 해야 할 일을 지정해줘야 하기 때문에
+// useMutation에 두 번째 인자로 성공 콜백함수를 지정해준다
+
+// export const UesAddSuperHeroData = () => {
+//   const queryClient = useQueryClient();
+//   return useMutation(addSuperHero, {
+//     onSuccess: () => {
+//       // 쿼리를 직접 무효화 시킨 후 데이터를 새로 패칭하도록
+//       // queryClient.invalidateQueries();
+//       // queryKey가 'super-heroes'로 시작하는 모든 쿼리 무효화
+//       queryClient.invalidateQueries("super-heroes");
+//     },
+//   });
+// };
+
+// ---------------------------------------------------------------------------
+// https://www.youtube.com/watch?v=Ev60HKYFM0s&list=PLC3y8-rFHvwjTELCrPrcZlo6blLBUspd2&index=3
+// 이후 강의
+
+// 추가 네트워크 요청 방지 ( 서버로 보내는 데이터가 있기 때문에 서버 응답을 또 받을 필요없다)
+// mutation에서 반환된 데이터를 사용한다
+// queryClient.setQueryData("super-heros", (oldQueryData) => {
+//   // query의 기본인자로는 (old)이전 data를 가지고 있다
+//   console.log(oldQueryData);
+//   return {
+//     ...oldQueryData,
+//     data: [...oldQueryData.data, data.data],
+//   };
+// });

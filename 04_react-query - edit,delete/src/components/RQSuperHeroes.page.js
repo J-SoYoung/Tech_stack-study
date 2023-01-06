@@ -19,8 +19,15 @@ export const RQSuperHeroesPage = () => {
     console.log("데이터 가져오기 실패", Error);
   };
 
-  const { mutate: addHero } = UesAddSuperHeroData();
-
+  // useAddSuperData의 hook의 결과값을 구조분해할당으로 받는다
+  // { mutate } 기본값 , mutate : addHero (별칭등록)
+  // const { mutate: addHero } = UesAddSuperHeroData();
+  const {
+    mutate: addHero,
+    isLoading: addHeroLoading,
+    isError: addHeroIsError,
+    error: addHeroError,
+  } = UesAddSuperHeroData();
 
   const handleAddHeroClick = () => {
     console.log({ name, alterEgo });
