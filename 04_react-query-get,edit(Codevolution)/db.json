@@ -1,0 +1,63 @@
+{
+  "superheroes": [
+    {
+      "id": 1,
+      "name": "Batman",
+      "alterEgo": "Bruce Wayne"
+    },
+    {
+      "id": 2,
+      "name": "Superman",
+      "alterEgo": "Clark Kent"
+    },
+    {
+      "id": 3,
+      "name": "Wonder Woman",
+      "alterEgo": "Princess Diana"
+    },
+    {
+      "name": "아 작성되나요",
+      "alterEgo": "나는 영웅이다 ",
+      "id": 4
+    },
+    {
+      "name": "ddd",
+      "alterEgo": "zzz",
+      "id": 5
+    },
+    {
+      "name": "이게 ",
+      "alterEgo": "맞죠",
+      "id": 6
+    },
+    {
+      "name": "되는건 맞아 ",
+      "alterEgo": "이게 간단한거임",
+      "id": 7
+    },
+    {
+      "name": "superheof",
+      "alterEgo": "dndkdkdk",
+      "id": 8
+    },
+    {
+      "name": "sss",
+      "alterEgo": "sss",
+      "id": 9
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "thdud"
+    },
+    {
+      "id": 2,
+      "name": "tjsdud"
+    },
+    {
+      "id": 3,
+      "name": "dudwn"
+    }
+  ]
+}
