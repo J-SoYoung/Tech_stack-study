@@ -19,6 +19,11 @@ export const deleteTodos = async (id: any) => {
   return res;
 };
 
+export const editTodos = async (id: any) => {
+  const res = await axios.delete(`http://localhost:3003/todos/${id}`);
+  return res;
+};
+
 export const useAddtodo = () => {
   const QueryClient = useQueryClient();
   return useMutation(addTodos, {
@@ -29,6 +34,15 @@ export const useAddtodo = () => {
 };
 
 export const useDeleteTodo = () => {
+  const QueryClient = useQueryClient();
+  return useMutation(deleteTodos, {
+    onSuccess: () => {
+      QueryClient.invalidateQueries("todolist");
+    },
+  });
+};
+
+export const useEditTodo = () => {
   const QueryClient = useQueryClient();
   return useMutation(deleteTodos, {
     onSuccess: () => {

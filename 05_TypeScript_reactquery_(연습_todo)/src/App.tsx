@@ -9,7 +9,6 @@ const App = () => {
   return (
     <>
       <h2>소영짱</h2>
-      {/* <PropsTest testText="props를 넘겨주자" /> */}
       <button onClick={(e) => setPage(!page)}>전환</button>
       {page ? (
         <>
