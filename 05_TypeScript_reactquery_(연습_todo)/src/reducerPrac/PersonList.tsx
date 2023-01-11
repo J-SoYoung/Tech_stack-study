@@ -1,6 +1,5 @@
 import React from "react";
-import { useAppSelector } from "./store/store";
-
+import { useAppSelector } from "../store";
 const List = () => {
   // state: 전체store
   // person: store에 slice이름

@@ -33,29 +33,25 @@
   ],
   "todos": [
     {
-      "text": "추가 바로 되나요 ",
-      "done": false,
-      "id": 16
+      "text": "ㅇㅇㅇ",
+      "content": "ㅇㅇㅇㅇㅋㅋㅋ",
+      "isDone": false,
+      "isEdit": false,
+      "id": 25
     },
     {
-      "text": "이제사 조금 알겠다 으하 ",
-      "done": false,
-      "id": 17
+      "text": "ㅁㅁㅁㅁ",
+      "content": "ㅋㅋㅋ",
+      "isDone": false,
+      "isEdit": false,
+      "id": 26
     },
     {
-      "text": "새로고침 해야 나오는겨?",
-      "done": false,
-      "id": 18
-    },
-    {
-      "text": "이제될겁니다",
-      "done": false,
-      "id": 19
-    },
-    {
-      "text": "리덕스 스토어 디스패치 공부라 허가빈ㄷ ",
-      "done": false,
-      "id": 20
+      "text": "",
+      "content": "",
+      "isDone": false,
+      "isEdit": false,
+      "id": 27
     }
   ]
 }

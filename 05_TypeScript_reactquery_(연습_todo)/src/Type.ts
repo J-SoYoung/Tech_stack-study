@@ -1,7 +1,9 @@
 export type Todos = {
-  id: number;
   text: string;
-  done: boolean;
+  content: string;
+  isDone: false;
+  isEdit: false;
+  id: number;
 };
 
 export type Posts = {
@@ -9,4 +11,11 @@ export type Posts = {
   title: string;
   author: string;
   description: string;
+};
+
+export type SignupTypes = {
+  email: string;
+  emailCheck: boolean;
+  password: number;
+  passwordCheck: number;
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef } from "react";
-import { addPerson } from "./store/features/personSlice";
-import { useAppDispatch } from "./store/store";
+import { addPerson } from "./personSlice";
+import { useAppDispatch } from "../store";
 
 const Add = () => {
   // useRef값을 string type으로 선언하고 name변수에 넣을 수 있다
