@@ -15,23 +15,6 @@ export default function Prac() {
     return getTodos();
   });
 
-  const { mutate: delTodo } = useDeleteTodo();
-  const handleDelete = (id: number) => {
-    delTodo(id);
-  };
-
-  const handleEditForm = (idx: number) => {
-    // 한꺼번에 바뀌는 것ㅋㅋㅋ
-    setIsEdit(!isEdit);
-  };
-
-  // const { mutate: editTodo } = useEditTodo()
-  const handleEdit = (idx: number) => {
-    const before = data?.data[idx];
-    setIsEdit(!isEdit);
-    // 데이터수정은 어떻게 ㅋㅋ
-    // editTodo()
-  };
 
   return (
     <>

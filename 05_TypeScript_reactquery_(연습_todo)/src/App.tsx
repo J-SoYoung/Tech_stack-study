@@ -4,6 +4,7 @@ import Todolist from "../src/reducerPrac/Todolist";
 import Prac from "./prac/Prac";
 import PropsTest from "./PropsTest";
 import SignupPage from "./signup/SignupPage";
+import AxiosPrac from "./axiosPrac/AxiosPrac";
 
 const App = () => {
   const [page, setPage] = useState(false);
@@ -17,7 +18,7 @@ const App = () => {
           <Todolist />
         </>
       ) : (
-        <SignupPage />
+        <AxiosPrac />
       )}
     </>
   );
