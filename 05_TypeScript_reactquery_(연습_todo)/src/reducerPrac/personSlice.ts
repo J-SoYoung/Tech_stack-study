@@ -1,4 +1,4 @@
-import { addPost } from "./../../../apiNote";
+import { addPost } from "../postNote/noteApi";
 import { createSlice } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit/dist/createAction";
 

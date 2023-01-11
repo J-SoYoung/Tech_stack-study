@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
 import { useQuery, useMutation, QueryClient } from "react-query";
-import { useAddtodo, useDeleteTodo } from "./api";
-import { Todos } from "./Type";
+import { useAddtodo, useDeleteTodo } from "../api";
+import { Todos } from "../Type";
 
-export default function Prac() {
+export default function TodoPrac() {
   const [todo, setTodo] = useState("");
 
   const [todoList, setTodoList] = useState<Todos[] | null>(null);

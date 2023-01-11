@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
-import { getPosts, useAddPost, useDelPost } from "./apiNote";
-import { Posts } from "./Type";
+import { getPosts, useAddPost, useDelPost } from "./noteApi";
+import { Posts } from "../Type";
 
 export default function Note() {
   const [title, setTitle] = useState("");
@@ -55,7 +55,7 @@ export default function Note() {
         <button onClick={handlePostAdd}>추가</button>
       </div>
       {data
-        ? data.data.map((d: any) => {
+        ? data.data.map((d: Posts) => {
             return (
               <div
                 key={d.id}

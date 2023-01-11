@@ -3,15 +3,16 @@ import axios from "axios";
 import { useState } from "react";
 import { useQuery, useMutation, QueryClient } from "react-query";
 import { getTodos, useAddtodo, useDeleteTodo } from "../api";
+import { Todos } from "../Type";
 
-const PracData = () => {
+const SignupData = () => {
   const [isEdit, setIsEdit] = useState(false);
   const [editData, setEditData] = useState("");
 
   const { data, isLoading, isError } = useQuery(["todolist"], () => {
     return getTodos();
   });
-
+  console.log(data);
   const { mutate: delTodo } = useDeleteTodo();
   const handleDelete = (id: number) => {
     delTodo(id);
@@ -31,11 +32,11 @@ const PracData = () => {
   };
 
   return (
-    <>
+    <div>
       {data
-        ? data?.data.map((d: any, idx: number) => {
+        ? data?.data.map((d: Todos, idx: number) => {
             return (
-              <div key={d.id}>
+              <div key={d.id} style={{ display: "flex", alignItems: "center" }}>
                 {!isEdit ? (
                   <p>{d.text}</p>
                 ) : (
@@ -74,8 +75,8 @@ const PracData = () => {
             );
           })
         : null}
-    </>
+    </div>
   );
 };
 
-export default PracData;
+export default SignupData;

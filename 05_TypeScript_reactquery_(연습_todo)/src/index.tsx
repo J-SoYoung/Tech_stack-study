@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { Provider } from "react-redux";
 import App from "./App";
-import { store } from "./components/store/store";
+import { store } from "./store";
 
 // const [queryClient] = useState(() => new QueryClient());
 // QueryClient를 이용,

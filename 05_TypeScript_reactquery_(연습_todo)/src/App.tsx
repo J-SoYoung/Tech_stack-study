@@ -1,8 +1,9 @@
 import { useState } from "react";
-import Todo from "./components/Todo";
-import Todolist from "./components/Todolist";
-import Prac from "./Prac";
+import Todo from "./reducerPrac/Todo";
+import Todolist from "../src/reducerPrac/Todolist";
+import Prac from "./prac/Prac";
 import PropsTest from "./PropsTest";
+import SignupPage from "./signup/SignupPage";
 
 const App = () => {
   const [page, setPage] = useState(false);
@@ -16,7 +17,7 @@ const App = () => {
           <Todolist />
         </>
       ) : (
-        <Prac />
+        <SignupPage />
       )}
     </>
   );

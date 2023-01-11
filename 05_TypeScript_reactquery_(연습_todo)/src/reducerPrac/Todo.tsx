@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import { addTodo } from "./store/features/todosSlice";
-import { useAppDispatch } from "./store/store";
+import { addTodo } from "./todosSlice";
+import { useAppDispatch } from "../store";
 
 const Todo = () => {
   const dispatch = useAppDispatch();

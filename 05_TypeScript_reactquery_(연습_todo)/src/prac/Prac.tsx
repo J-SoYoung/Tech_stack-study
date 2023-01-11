@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
 import { useQuery, useMutation, QueryClient } from "react-query";
-import { getTodos, useAddtodo, useDeleteTodo } from "./api";
-import PracData from "./components/PracData";
-import PracInput from "./components/PracInput";
+import { getTodos, useAddtodo, useDeleteTodo } from "../api";
+import PracData from "./PracData";
+import PracInput from "./PracInput";
 
-import { Todos } from "./Type";
+import { Todos } from "../Type";
 
 export default function Prac() {
   const [isEdit, setIsEdit] = useState(false);
