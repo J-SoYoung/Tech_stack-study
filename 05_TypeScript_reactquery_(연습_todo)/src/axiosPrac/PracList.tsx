@@ -1,18 +1,24 @@
 import React from "react";
-import axios from "axios";
+import axios, { AxiosRequestConfig, AxiosResponseHeaders } from "axios";
 import { useState } from "react";
 import { useQuery, useMutation, QueryClient } from "react-query";
 import { getTodos, useAddtodo, useDeleteTodo } from "../api";
-import { Pracs } from "../Type";
+import { Todos } from "../Type";
 
-const PracData = () => {
-  const [isEdit, setIsEdit] = useState(false);
+// export type Todos = {
+//   text: string;
+//   content: string;
+//   isDone: false;
+//   isEdit: false;
+//   id: number;
+// };
+
+const PracList = (todo: any) => {
+  // console.log(todo);
+
+  const [isEdits, setIsEdits] = useState(false);
   const [editData, setEditData] = useState("");
 
-  const { data, isLoading, isError } = useQuery(["todolist"], () => {
-    return getTodos();
-  });
-  console.log(data);
   const { mutate: delTodo } = useDeleteTodo();
   const handleDelete = (id: number) => {
     delTodo(id);
@@ -20,25 +26,27 @@ const PracData = () => {
 
   const handleEditForm = (idx: number) => {
     // 한꺼번에 바뀌는 것ㅋㅋㅋ
-    setIsEdit(!isEdit);
+    setIsEdits(!setIsEdits);
   };
 
   // const { mutate: editTodo } = useEditTodo()
   const handleEdit = (idx: number) => {
-    const before = data?.data[idx];
-    setIsEdit(!isEdit);
-    // 데이터수정은 어떻게 ㅋㅋ
+    // const before = data?.data[idx];
+    setIsEdits(!isEdits);
     // editTodo()
   };
 
   return (
     <div>
-      {data
-        ? data?.data.map((d: Pracs, idx: number) => {
+      {todo
+        ? todo?.todo.map((d: Todos, idx: number) => {
             return (
-              <div key={d.id} style={{ display: "flex", alignItems: "center" }}>
-                {!isEdit ? (
-                  <p>{d.text}</p>
+              <div key={d.id} style={{ border: "1px solid black" }}>
+                {!isEdits ? (
+                  <>
+                    <p>text : {d.text}</p>
+                    <p>content : {d.content}</p>
+                  </>
                 ) : (
                   <input
                     defaultValue={d.text}
@@ -54,7 +62,7 @@ const PracData = () => {
                 >
                   삭제
                 </button>
-                {!isEdit ? (
+                {!isEdits ? (
                   <button
                     onClick={() => {
                       handleEditForm(idx);
@@ -79,4 +87,4 @@ const PracData = () => {
   );
 };
 
-export default PracData;
+export default PracList;

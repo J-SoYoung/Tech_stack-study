@@ -2,10 +2,10 @@ import axios from "axios";
 import { useState } from "react";
 import { useQuery, useMutation, QueryClient } from "react-query";
 import { getTodos, useAddtodo, useDeleteTodo } from "../api";
-import PracData from "./SignupData";
-import PracInput from "./SignupForm";
 
 import { Todos } from "../Type";
+import SignupData from "./SignupData";
+import SignupForm from "./SignupForm";
 
 export default function SignupPage() {
   const [isEdit, setIsEdit] = useState(false);
@@ -38,8 +38,8 @@ export default function SignupPage() {
       {isLoading ? <p>로딩중입니다</p> : null}
       {isError ? <p>에러</p> : null}
       <h2> Todo 연습장 1/8 </h2>
-      <PracInput />
-      <PracData />
+      <SignupForm />
+      <SignupData />
     </>
   );
 }
