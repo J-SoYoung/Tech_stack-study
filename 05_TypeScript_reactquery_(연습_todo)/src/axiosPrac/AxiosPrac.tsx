@@ -16,6 +16,7 @@ export default function AxiosPrac() {
   // 서버에서 온 데이터는 처음에는 undefined이므로 컴포넌트 자체에
   // data가 있을 경우에 <pracList>에 컴포넌트로 값을 넘겨줘야 한다고 명시해야 한다
   // todo props로 가는 todoList타입 : [ {}, {}, {} ] 인데 조금 더 찾아보장
+
   const { data, isLoading, isError } = useQuery(["todolist"], () => {
     return getTodos();
   });
@@ -28,6 +29,13 @@ export default function AxiosPrac() {
       <h2> Todo 연습장 1/8 </h2>
       <PracInput />
       {data && <PracList todo={todoList} />}
+      <button
+        onClick={() => {
+          window.location.href = "http://www.naver.com";
+        }}
+      >
+        이동
+      </button>
     </>
   );
 }
