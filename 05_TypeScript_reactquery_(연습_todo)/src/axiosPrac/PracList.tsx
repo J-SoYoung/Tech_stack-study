@@ -1,7 +1,12 @@
 import React from "react";
 import axios, { AxiosRequestConfig, AxiosResponseHeaders } from "axios";
 import { useState } from "react";
-import { useQuery, useMutation, QueryClient } from "react-query";
+import {
+  useQuery,
+  useMutation,
+  QueryClient,
+  useQueryClient,
+} from "react-query";
 import { getTodos, useAddtodo, useDeleteTodo } from "../api";
 import { Todos } from "../Type";
 
@@ -16,24 +21,9 @@ import { Todos } from "../Type";
 const PracList = (todo: any) => {
   // console.log(todo);
 
-  const [isEdits, setIsEdits] = useState(false);
-  const [editData, setEditData] = useState("");
-
   const { mutate: delTodo } = useDeleteTodo();
   const handleDelete = (id: number) => {
     delTodo(id);
-  };
-
-  const handleEditForm = (idx: number) => {
-    // 한꺼번에 바뀌는 것ㅋㅋㅋ
-    setIsEdits(!setIsEdits);
-  };
-
-  // const { mutate: editTodo } = useEditTodo()
-  const handleEdit = (idx: number) => {
-    // const before = data?.data[idx];
-    setIsEdits(!isEdits);
-    // editTodo()
   };
 
   return (
@@ -42,19 +32,10 @@ const PracList = (todo: any) => {
         ? todo?.todo.map((d: Todos, idx: number) => {
             return (
               <div key={d.id} style={{ border: "1px solid black" }}>
-                {!isEdits ? (
-                  <>
-                    <p>text : {d.text}</p>
-                    <p>content : {d.content}</p>
-                  </>
-                ) : (
-                  <input
-                    defaultValue={d.text}
-                    onChange={(e) => {
-                      setEditData(e.target.value);
-                    }}
-                  />
-                )}
+                <>
+                  <p>text : {d.text}</p>
+                  <p>content : {d.content}</p>
+                </>
                 <button
                   onClick={() => {
                     handleDelete(d.id);
@@ -62,23 +43,6 @@ const PracList = (todo: any) => {
                 >
                   삭제
                 </button>
-                {!isEdits ? (
-                  <button
-                    onClick={() => {
-                      handleEditForm(idx);
-                    }}
-                  >
-                    수정
-                  </button>
-                ) : (
-                  <button
-                    onClick={() => {
-                      handleEdit(idx);
-                    }}
-                  >
-                    수정완료
-                  </button>
-                )}
               </div>
             );
           })
