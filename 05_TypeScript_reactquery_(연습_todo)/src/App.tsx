@@ -5,13 +5,15 @@ import Prac from "./prac/Prac";
 import PropsTest from "./PropsTest";
 import SignupPage from "./signup/SignupPage";
 import AxiosPrac from "./axiosPrac/AxiosPrac";
+import KakaoButton from "./kakaoShare/KakaoButton";
 
 const App = () => {
   const [page, setPage] = useState(false);
   return (
     <>
       <h2>소영짱</h2>
-      <button onClick={(e) => setPage(!page)}>전환</button>
+      <KakaoButton />
+      {/* <button onClick={(e) => setPage(!page)}>전환</button>
       {page ? (
         <>
           <Todo />
@@ -19,7 +21,7 @@ const App = () => {
         </>
       ) : (
         <AxiosPrac />
-      )}
+      )} */}
     </>
   );
 };
