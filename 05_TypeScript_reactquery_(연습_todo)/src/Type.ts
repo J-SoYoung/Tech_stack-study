@@ -38,3 +38,9 @@ export type SignupTypes = {
   password: number;
   passwordCheck: number;
 };
+
+export type KakaoShare = {
+  title: string;
+  description: string;
+  url: string;
+};
