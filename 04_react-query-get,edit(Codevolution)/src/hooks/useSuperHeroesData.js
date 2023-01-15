@@ -3,11 +3,11 @@ import { useQuery, useMutation, useQueryClient } from "react-query";
 import axios from "axios";
 
 const fetchSuperHeros = () => {
-  return axios.get("http://localhost:3005/superheroes");
+  return axios.get("http://localhost:3003/superheroes");
 };
 
 const addSuperHero = (hero) => {
-  return axios.post("http://localhost:3005/superheroes", hero);
+  return axios.post("http://localhost:3003/superheroes", hero);
 };
 
 // READ HOOKS
