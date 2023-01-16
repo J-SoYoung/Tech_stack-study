@@ -53,5 +53,107 @@
       "isEdit": false,
       "id": 27
     }
+  ],
+  "diary": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 2,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 3,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 4,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 5,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 6,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 7,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 8,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 9,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 10,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 11,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 12,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 13,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 14,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 15,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 16,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 17,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 18,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 19,
+      "title": "json-server",
+      "content": "json-server practice"
+    },
+    {
+      "id": 20,
+      "title": "끝json-server",
+      "content": "json-server practice"
+    }
   ]
 }
