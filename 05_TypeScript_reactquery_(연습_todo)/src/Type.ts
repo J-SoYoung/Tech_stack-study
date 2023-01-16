@@ -44,3 +44,9 @@ export type KakaoShare = {
   description: string;
   url: string;
 };
+
+export type DiaryTypes = {
+  id: number;
+  title: string;
+  content: string;
+};
