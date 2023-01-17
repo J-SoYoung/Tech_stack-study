@@ -13,8 +13,8 @@ const App = () => {
   return (
     <>
       <h2>소영짱</h2>
-      <KakaoButton />
-      <InfiniteScroll />
+      <SignupPage />
+      {/* <InfiniteScroll /> */}
       {/* <button onClick={(e) => setPage(!page)}>전환</button>
       {page ? (
         <>

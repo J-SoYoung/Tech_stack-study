@@ -11,7 +11,7 @@ root.render(
   <QueryClientProvider client={queryClient}>
     <React.StrictMode>
       <App />
-      <AppModalBasic />
+      {/* <AppModalBasic /> */}
     </React.StrictMode>
   </QueryClientProvider>
 );
