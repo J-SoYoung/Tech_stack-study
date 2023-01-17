@@ -1,68 +1,53 @@
 import React from "react";
 import axios from "axios";
+
 import { useState } from "react";
 import { useQuery, useMutation, QueryClient } from "react-query";
 import { useAddtodo } from "../api";
+import "./SignupForm.css";
 
 const SignupForm = () => {
-  const [email, setEmail] = useState("");
-  const [emailCheck, setEmailCheck] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordCheck, setPasswordCheck] = useState(false);
+  
 
-  const { mutate: addTodo } = useAddtodo();
-  const handleClickSignup = () => {
-    const todolist = {
-      email: email,
-      emailCheck: emailCheck,
-      password: password,
-      passwordCheck: passwordCheck,
-    };
-    addTodo(todolist);
+
+  // const { mutate: addSignup } = useAddSignup();
+  const buttonClickSignup = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // const todolist = {};
+    // addSignup(todolist);
   };
-  const handleEmailCheck = () => {};
+
+  const emailCheck = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    // email 정규식검사
+    // 서버에 get요청 email
+    // 성공하면 버튼 바뀜 : 이메일 확인 / 다시보내기 , 이메일 버튼 비활성화
+  };
+  const authNumberCheck = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    // 서버에 get요청 auth
+    // 성공하면 회원가입 성공에 T/F
+  };
 
   return (
-    <>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          width: "400px",
-        }}
-      >
-        <input
-          style={{ margin: "0 0 15px 0", height: "30px" }}
-          type="email"
-          value={email}
-          placeholder="text input"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        {/* <input
-          style={{ margin: "0 0 15px 0", height: "30px" }}
-          type="number"
-          value={emailCheck}
-          placeholder="content input22"
-          onChange={(e) => setEmailCheck(e.target.value)}
-        /> */}
-        <button onClick={handleEmailCheck}>이메일확인</button>
-        <input
-          style={{ margin: "0 0 15px 0", height: "30px" }}
-          type="password"
-          value={password}
-          placeholder="content input22"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        {/* <input
-          style={{ margin: "0 0 15px 0", height: "30px" }}
-          type="password"
-          value={passwordCheck}
-          placeholder="content input22"
-          onChange={(e) => setPasswordCheck(e.target.value)}
-        /> */}
-        <button onClick={handleClickSignup}>추가</button>
+    <form className="signupForm" onSubmit={buttonClickSignup}>
+      <div>
+        <input type="email" placeholder="이메일을 입력해주세요" />
+        <button type="button" onClick={emailCheck}>
+          이메일 확인
+        </button>
       </div>
-    </>
+      <div>
+        <input type="number" placeholder="인증번호를 입력해주세요" />
+        <button type="button" onClick={authNumberCheck}>
+          인증번호 확인
+        </button>
+      </div>
+      <input type="password" placeholder="비밀번호를 입력해주세요" />
+      <input type="password" placeholder="비밀번호를 한번 더 입력해주세요" />
+      <input type="text" placeholder="닉네임을 입력해주세요" />
+      <button type="submit">회원가입</button>
+    </form>
   );
 };
 
