@@ -59,5 +59,47 @@
       "id": 3,
       "name": "dudwn"
     }
+  ],
+  "colors": [
+    {
+      "color_id": 1,
+      "label": "red"
+    },
+    {
+      "color_id": 2,
+      "label": "orange"
+    },
+    {
+      "color_id": 3,
+      "label": "yellow"
+    },
+    {
+      "color_id": 4,
+      "label": "greedn"
+    },
+    {
+      "color_id": 5,
+      "label": "blue"
+    },
+    {
+      "color_id": 6,
+      "label": "purple"
+    },
+    {
+      "color_id": 7,
+      "label": "pink"
+    },
+    {
+      "color_id": 8,
+      "label": "white"
+    },
+    {
+      "color_id": 9,
+      "label": "black"
+    },
+    {
+      "color_id": 10,
+      "label": "mint"
+    }
   ]
 }

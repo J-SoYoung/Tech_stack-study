@@ -6,13 +6,15 @@ import PropsTest from "./PropsTest";
 import SignupPage from "./signup/SignupPage";
 import AxiosPrac from "./axiosPrac/AxiosPrac";
 import KakaoButton from "./kakaoShare/KakaoButton";
+import InfiniteScroll from "./infiniteScroll/InfiniteScroll";
 
 const App = () => {
   const [page, setPage] = useState(false);
   return (
     <>
       <h2>소영짱</h2>
-      <KakaoButton />
+      <SignupPage />
+      {/* <InfiniteScroll /> */}
       {/* <button onClick={(e) => setPage(!page)}>전환</button>
       {page ? (
         <>
