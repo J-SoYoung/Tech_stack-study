@@ -155,5 +155,23 @@
       "title": "끝json-server",
       "content": "json-server practice"
     }
+  ],
+  "signup": [
+    {
+      "id": 1,
+      "email": "thdud123@nate.com",
+      "password": "thdud123@",
+      "nickname": "thdud123"
+    }
+  ],
+  "email": [
+    {
+      "emailCheck": true
+    }
+  ],
+  "auth": [
+    {
+      "number": 1234
+    }
   ]
 }
