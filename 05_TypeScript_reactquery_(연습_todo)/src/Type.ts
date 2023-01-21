@@ -37,6 +37,7 @@ export type SignupTypes = {
   emailCheck: boolean;
   password: number;
   passwordCheck: number;
+  nickname: string;
 };
 
 export type KakaoShare = {

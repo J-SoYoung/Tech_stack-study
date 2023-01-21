@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from "react-query";
 import axios, { AxiosPromise } from "axios";
+import { SignupTypes } from "../Type";
 
 // 여기서 axios결과값과
 // 내가 보여주고자 하는 todos의 타입을 어떻게 지정하는가
@@ -49,3 +50,11 @@ export const useEditTodo = () => {
     },
   });
 };
+
+export const emailCheckApi = async (email: SignupTypes) => {
+  console.log(email);
+  const res = await axios.post("http://localhost:3003/email", email);
+  console.log(res);
+  return res;
+};
+
