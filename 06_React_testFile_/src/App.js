@@ -1,16 +1,12 @@
 import { useState } from "react";
-import Modal from "./components/ModalBasic";
-import KakaoShare from "./kakaoShare/KakaoShare";
-import _InfiniteScroll from "./infiniteScroll/file/_InfiniteScroll";
-import InfiniteScroll from "./infiniteScroll/file/InfiniteScroll";
-import Example from "./infiniteScroll/file/React_window";
+import ModalButton from "./Modal/ModalButton";
+import ToastsButton from "./toasts/ToastsButton";
+import SweetAlert from "./sweetAlert/SweetAlert";
 
 function App() {
   return (
     <>
-      {/* <Modal /> */}
-      <KakaoShare />
-      <Example />
+      <SweetAlert />
     </>
   );
 }
