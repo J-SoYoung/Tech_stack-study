@@ -1,12 +1,6 @@
 import { useState } from "react";
-import Todo from "./reducerPrac/Todo";
-import Todolist from "../src/reducerPrac/Todolist";
-import Prac from "./prac/Prac";
-import PropsTest from "./PropsTest";
+
 import SignupPage from "./signup/SignupPage";
-import AxiosPrac from "./axiosPrac/AxiosPrac";
-import KakaoButton from "./kakaoShare/KakaoButton";
-import InfiniteScroll from "./infiniteScroll/InfiniteScroll";
 
 const App = () => {
   const [page, setPage] = useState(false);
@@ -14,7 +8,6 @@ const App = () => {
     <>
       <h2>소영짱</h2>
       <SignupPage />
-      {/* <InfiniteScroll /> */}
       {/* <button onClick={(e) => setPage(!page)}>전환</button>
       {page ? (
         <>

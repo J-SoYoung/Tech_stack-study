@@ -27,6 +27,7 @@ const ProductMain = ({ list, params }) => {
 		}
 		params.getProductList({ page: page + 1 });
 	};
+  
 
 	return (
 		<>
