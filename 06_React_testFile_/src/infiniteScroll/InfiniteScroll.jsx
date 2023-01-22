@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useInfiniteQuery, useQuery } from "react-query";
 
-const getPosts = ({ pageParam = 1 }) => {
+export const getPosts = ({ pageParam = 1 }) => {
   return axios.get(`http://localhost:3005/posts?_limit=5&_page=${pageParam}`);
 };
 
