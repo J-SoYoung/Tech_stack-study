@@ -42,7 +42,7 @@ const ObserverInfinite = () => {
         },
       }
     );
-    console.log(data);
+    // console.log(data);
 
     // IntersectionObserver 설정
     const intersectionObserver = (entries, io) => {

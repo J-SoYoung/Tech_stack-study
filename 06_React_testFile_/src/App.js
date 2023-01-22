@@ -1,12 +1,11 @@
-import { useState } from "react";
-import ModalButton from "./Modal/ModalButton";
-import ToastsButton from "./toasts/ToastsButton";
-import SweetAlert from "./sweetAlert/SweetAlert";
+import styled from "styled-components";
+import Example1 from "./infiniteScroll/Example1";
+import Example2 from "./infiniteScroll/Example2";
 
 function App() {
   return (
     <>
-      <SweetAlert />
+      <Example2 />
     </>
   );
 }
