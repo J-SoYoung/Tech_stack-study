@@ -3,8 +3,10 @@ import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { Provider } from "react-redux";
+import { ThemeProvider } from "styled-components";
 import App from "./App";
 import { store } from "./store";
+import theme from "./thema";
 
 // const [queryClient] = useState(() => new QueryClient());
 // QueryClient를 이용,
@@ -17,10 +19,12 @@ const root = ReactDOM.createRoot(
 root.render(
   <QueryClientProvider client={queryClient}>
     <Provider store={store}>
-      {/* <React.StrictMode> */}
-      <App />
-      {/* </React.StrictMode> */}
-      <ReactQueryDevtools />
+      <ThemeProvider theme={theme}>
+        {/* <React.StrictMode> */}
+        <App />
+        {/* </React.StrictMode> */}
+        <ReactQueryDevtools />
+      </ThemeProvider>
     </Provider>
   </QueryClientProvider>
 );
