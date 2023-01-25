@@ -11,6 +11,7 @@ import {
 import { useAddtodo } from "../api";
 import "./SignupForm.css";
 import { emailCheckApi } from "../axiosPrac/api";
+import styled from "styled-components";
 
 const SignupForm = () => {
   const [email, setEmail] = useState("");
@@ -52,30 +53,59 @@ const SignupForm = () => {
   };
 
   return (
-    <form className="signupForm" onSubmit={buttonClickSignup}>
-      <div>
+    <SignFormBox className="signupForm" onSubmit={buttonClickSignup}>
+      <ProfileImg src="/img/test.jpg" />
+      <BackgroundImg src="/img/1666792352378.jpg" />
+      <BackgroundImg src="/img/2.jpg" />
+      <InputBox>
         <input
           type="email"
           value={email}
           placeholder="이메일을 입력해주세요"
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button type="button" onClick={handleEmailCheck}>
+        <Button type="button" onClick={handleEmailCheck}>
           이메일 확인
-        </button>
-      </div>
-      <div>
+        </Button>
+      </InputBox>
+      <InputBox>
         <input type="number" placeholder="인증번호를 입력해주세요" />
-        <button type="button" onClick={authNumberCheck}>
+        <Button type="button" onClick={authNumberCheck}>
           인증번호 확인
-        </button>
-      </div>
+        </Button>
+      </InputBox>
       <input type="password" placeholder="비밀번호를 입력해주세요" />
       <input type="password" placeholder="비밀번호를 한번 더 입력해주세요" />
       <input type="text" placeholder="닉네임을 입력해주세요" />
-      <button type="submit">회원가입</button>
-    </form>
+      <Button type="submit">회원가입</Button>
+    </SignFormBox>
   );
 };
+const SignFormBox = styled.form`
+  ${({ theme }) => theme.common.flexCenterColumn}
+`;
+const InputBox = styled.div`
+  input {
+    width: ${({ theme }) => theme.widthStyle.inputWidth};
+    height: ${({ theme }) => theme.widthStyle.inputHeigh};
+    border-radius: ${({ theme }) => theme.widthStyle.inputBR};
+  }
+`;
+const Button = styled.button`
+  ${({ theme }) => theme.buttonStyle.basic}
+`;
+const ProfileImg = styled.img`
+  ${({ theme }) => theme.imgStyle.profileImg}
+`;
+const BackgroundImg = styled.img`
+  ${({ theme }) => theme.imgStyle.backgroundImg}
+`;
 
 export default SignupForm;
+
+/* .signupForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+} */
